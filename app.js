@@ -4,8 +4,9 @@ const app = Vue.createApp({
             showBooks: false,
             title: 'The Final Empire',
             author: 'Brandon Sanderson',
-            age: '45'
-
+            age: '45',
+            x: 0,
+            y: 0
         }
     },
     methods: {
@@ -14,6 +15,16 @@ const app = Vue.createApp({
         },
         toggleShowBooks() {
             this.showBooks = !this.showBooks;
+        },
+        handleEvent(event, data) {
+            console.log(event, event.type)
+            if (data) {
+                console.log(data)
+            }
+        },
+        handleMouseMove(e) {
+            this.x = e.offsetX
+            this.y = e.offsetY
         }
     }
 })
