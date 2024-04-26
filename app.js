@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             url: 'https://github.com/ThomasLX869',
             showBooks: false,
+            showFavBooks: true,
             books: [
                 { title : 'The Final Empire', author : 'Brandon Sanderson', img: 'assets/the_final_empire.jpg', isFav: false},
                 { title : 'Harry Poter', author : 'JK Rowling', img: 'assets/harry_potter.jpg', isFav: false},
@@ -12,12 +13,20 @@ const app = Vue.createApp({
             y: 0
         }
     },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav)
+        }
+    },
     methods: {
         changeTitle(title) {
             this.title = title
         },
         toggleShowBooks() {
-            this.showBooks = !this.showBooks;
+            this.showBooks = !this.showBooks
+        },
+        toggleShowFavBooks() {
+            this.showFavBooks = !this.showFavBooks
         },
         handleEvent(event, data) {
             console.log(event, event.type)
@@ -32,7 +41,7 @@ const app = Vue.createApp({
         toggleFav(book) {
             book.isFav = !book.isFav
         }
-    }
+    },
 })
 
 app.mount('#app')

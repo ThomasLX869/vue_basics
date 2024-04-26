@@ -45,6 +45,24 @@
             <a :href="url" target="_blank">Best git hub ever !</a>
         </div>
         <br>
+        <!-- fav books -->
+        <button @click="toggleShowFavBooks">
+            <span v-if="showBooks">Hide fav books</span>
+            <span v-else>Show fav books</span>
+        </button>
+        <div v-if="showFavBooks">
+            <ul>
+                <li v-for="favBook in filteredBooks" :class="{ fav: book.isFav }">
+                    <img :src="favBook.img" :alt="book.title">
+                    <h3>{{ favBook.title }}</h3>
+                    <p>{{ favBook.author }}</p>
+                    </br>
+                </li>
+            </ul>
+            <p>
+        </div>
+
+        <!-- all books -->
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide books</span>
             <span v-else>Show books</span>
