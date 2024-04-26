@@ -2,9 +2,11 @@ const app = Vue.createApp({
     data() {
         return {
             showBooks: false,
-            title: 'The Final Empire',
-            author: 'Brandon Sanderson',
-            age: '45',
+            books: [
+                { title : 'The Final Empire', author : 'Brandon Sanderson', age: '45'},
+                { title : 'Harry Poter', author : 'JK Rowling', age: '25'},
+                { title : 'Le Horla', author : 'Guy de Maupassant', age: '133'},
+            ],
             x: 0,
             y: 0
         }
