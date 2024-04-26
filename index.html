@@ -18,6 +18,12 @@
 <body>
     <h1>Hello, Vue :)</h1>
     <div id="app">
+
+        <!-- attribute binding -->
+        <div>
+            <a :href="url" target="_blank">Best git hub ever !</a>
+        </div>
+        <br>
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide books</span>
             <span v-else>Show books</span>
@@ -25,8 +31,10 @@
         <div v-if="showBooks">
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
+                    </br>
                 </li>
             </ul>
             <p>
