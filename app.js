@@ -4,9 +4,9 @@ const app = Vue.createApp({
             url: 'https://github.com/ThomasLX869',
             showBooks: false,
             books: [
-                { title : 'The Final Empire', author : 'Brandon Sanderson', age: '45', img: 'assets/the_final_empire.jpg'},
-                { title : 'Harry Poter', author : 'JK Rowling', age: '25', img: 'assets/harry_potter.jpg'},
-                { title : 'Le Horla', author : 'Guy de Maupassant', age: '133', img: 'assets/horla.jpg'},
+                { title : 'The Final Empire', author : 'Brandon Sanderson', img: 'assets/the_final_empire.jpg', isFav: false},
+                { title : 'Harry Poter', author : 'JK Rowling', img: 'assets/harry_potter.jpg', isFav: false},
+                { title : 'Le Horla', author : 'Guy de Maupassant', img: 'assets/horla.jpg', isFav: true},
             ],
             x: 0,
             y: 0
