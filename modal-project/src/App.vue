@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal theme="sale" @close="toggleOpenModal">
       <template v-slot:links>
         <a href="#">sign up now</a>
@@ -10,13 +10,13 @@
       <h1>Ninja giveaway !</h1>
       <p>Grab your ninja swag for half price !</p>
     </Modal>
-  </div>
-  <div v-if="showModalEx">
+  </teleport>
+  <teleport to="#modals" v-if="showModalEx">
     <Modal @close="toggleOpenModalEx">
       <h1>My exercice Modal</h1>
       <p>Made for exercice</p>
     </Modal>
-  </div>
+  </teleport>
   <div>
   </div>
   <button @click.alt="toggleOpenModal"> Open modal (alt) </button>
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
