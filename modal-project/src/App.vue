@@ -11,10 +11,20 @@
       <p>Grab your ninja swag for half price !</p>
     </Modal>
   </div>
+  <div v-if="showModalEx">
+    <Modal @close="toggleOpenModalEx">
+      <h1>My exercice Modal</h1>
+      <p>Made for exercice</p>
+    </Modal>
+  </div>
+  <div>
+  </div>
   <button @click.alt="toggleOpenModal"> Open modal (alt) </button>
+  <button @click.ctrl="toggleOpenModalEx"> Open modal (ctrl) </button>
 </template>
 
 <script>
+
 import Modal from './components/Modal.vue';
 
 export default {
@@ -25,7 +35,8 @@ export default {
       title: 'My First Vue App :)',
       header: 'Sign up for the giveaway !',
       text: 'This is some content !',
-      showModal: false
+      showModal: false,
+      showModalEx: false
     }
   },
   methods: {
@@ -36,6 +47,9 @@ export default {
     },
     toggleOpenModal() {
       this.showModal = !this.showModal
+    },
+    toggleOpenModalEx() {
+      this.showModalEx = !this.showModalEx
     }
   }
 }
