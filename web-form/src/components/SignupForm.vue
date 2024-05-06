@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label>Email :</label>
     <input type="email" required v-model="email">
     
@@ -22,6 +22,11 @@
         <input type="checkbox" v-model="terms" required>
         <label> Accept terms and conditions</label>
     </div>
+
+    <div class="submit">
+        <button>Create an Account</button>
+    </div>
+
   </form>
   <p>Email : {{ this.email }}</p>
   <p>Password : {{ this.password }}</p>
@@ -54,6 +59,9 @@ export default {
         },
         deleteSkill(skillToRemove) {
             this.skills = this.skills.filter(skill => skill !== skillToRemove);
+        },
+        handleSubmit() {
+            console.log('form submitted');
         }
     }
 }
@@ -104,5 +112,15 @@ export default {
         font-weight: bold;
         color: #777;
         cursor: pointer;
+    }
+    button {
+        background: #0b6dff;
+        border: 0;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 20px;
+    }
+    .submit {
+        text-align: center;
     }
 </style>
